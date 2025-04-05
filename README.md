@@ -1,5 +1,3 @@
-# cpp_14x050
-
 ## Description
 
 This is a **non-official** C++ port of University of Geneva's Deep Learning Course (14x050), which is originally written in Python and Pytorch. The course can be accessed here: https://fleuret.org/dlc/
