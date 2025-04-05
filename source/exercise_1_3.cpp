@@ -30,9 +30,7 @@ int main(){
             b[i] = dist(gen);
     }
 
-    // Matmul
-    // We are using Apple's vDSP_mmul instead for testing
-    // Apparently this gives us PyTorch performance, which is great!
+    // We are using Apple's vDSP_mmul instead of openBLAS
     auto t1 = high_resolution_clock::now();
     vDSP_mmul(a, 1, b, 1, c, 1, n, n, n);
     auto t2 = high_resolution_clock::now();
@@ -40,10 +38,10 @@ int main(){
     // Calculating throughput
     // Python's time.perf_counter() returns time in seconds instead of miliseconds (but float)
     auto runtime = duration_cast<milliseconds>(t2 - t1);
-    double runtime_seconds = static_cast<double>(runtime.count()) / 1000.0; // Convert to seconds
-    double flops = static_cast<double>(2.0 * n * n * n) / runtime_seconds; // 2 * n^3 FLOPs for dgemm
+    double runtime_seconds = static_cast<double>(runtime.count()) / 1000.0;  // Convert to seconds
+    double flops = static_cast<double>(2.0 * n * n * n) / runtime_seconds;  // 2 * n^3 FLOP/s
 
-    std::cout << "Throughput: " << flops << " flop/s" << std::endl; //GFLOP/s
+    std::cout << "Throughput: " << flops << " flop/s" << std::endl;  // Comparable to PyTorch
 
     // Freeing memory
     free(a);
