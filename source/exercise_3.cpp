@@ -42,7 +42,6 @@ std::tuple<torch::Tensor, torch::Tensor, torch::Tensor, torch::Tensor, torch::Te
         auto x2 = sigma(s2);
 
         return std::make_tuple(x0, s1, x1, s2, x2);
-
 } 
 
 // And the backward passes
@@ -64,9 +63,7 @@ void backward_pass(const torch::Tensor& w1, const torch::Tensor& b1,
         dl_db2.add_(dl_ds2);
         dl_dw1.add_(dl_ds1.view({-1, 1}).mm(x0.view({1, -1})));
         dl_db1.add_(dl_ds1);
-
 }
-
 
 
 // Dataset one-hot-labelling

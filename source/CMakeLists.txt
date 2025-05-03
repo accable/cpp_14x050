@@ -4,6 +4,20 @@ project(cpp14x050)
 find_package(Torch REQUIRED)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
 
-add_executable(exercise_2 exercise_2.cpp)
-target_link_libraries(exercise_2 "${TORCH_LIBRARIES}")
-set_property(TARGET exercise_2 PROPERTY CXX_STANDARD 17)
+add_executable(exercise_3 exercise_3.cpp)
+target_link_libraries(exercise_3 "${TORCH_LIBRARIES}")
+set_property(TARGET exercise_3 PROPERTY CXX_STANDARD 17)
+
+if(APPLE)
+    # Use Accelerate Framework (Apple's optimized BLAS)
+    set(BLA_VENDOR Apple)
+    
+    # Enable Metal acceleration if available
+    if(EXISTS "/System/Library/Frameworks/Metal.framework")
+        add_definitions(-DUSE_METAL)
+        message(STATUS "Metal framework found - enabling GPU acceleration")
+    endif()
+    
+    # Additional Clang optimizations
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvectorize -fslp-vectorize")
+endif()
