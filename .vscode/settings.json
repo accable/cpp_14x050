@@ -1,4 +1,8 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
-    "cmake.sourceDirectory": "/Users/assisi/cpp_14x050/source"
+    "cmake.sourceDirectory": "/Users/assisi/cpp_14x050/source",
+    "files.associations": {
+        "__locale": "cpp",
+        "ios": "cpp"
+    }
 }
