@@ -15,8 +15,7 @@ Due to the nature of C++, some of the assignments might be skipped or modified. 
 **Currently, this repository assumes that the user have:**
 
 1. A MacBook (required for Accelerate Framework) with at least 16GB of memory with clang compiler (bundled with xcode) for Apple Accelerate Framework.
-2. Any computer with cmake compiler and NVIDIA graphics card (This was tested on V100 16GB)
-3. Nvidia Grace Superchip 240GB
+2. Nvidia Grace Superchip 240GB
 
 **Library dependencies:**
 
