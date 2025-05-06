@@ -3,6 +3,11 @@
     "cmake.sourceDirectory": "/Users/assisi/cpp_14x050/source",
     "files.associations": {
         "__locale": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "string": "cpp",
+        "vector": "cpp"
     }
 }

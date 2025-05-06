@@ -9,7 +9,7 @@
 const char* kDataRoot =  "../dataset/MNIST/raw";  // This was run from build/
 
 
-// Building the model  (following https://github.com/pytorch/examples/blob/main/cpp/mnist/mnist.cpp w/ its parameters modified)
+// Building the model (following https://github.com/pytorch/examples/blob/main/cpp/mnist/mnist.cpp w/ its parameters modified)
 struct Net : torch::nn::Module {
     Net(): 
         conv1(torch::nn::Conv2dOptions(1, 32, 5)),

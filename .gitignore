@@ -9529,3 +9529,4 @@ source/dataset/MNIST/raw/train-images-idx3-ubyte
 source/dataset/MNIST/raw/train-labels-idx1-ubyte
 .vscode/settings.json
 .vscode/settings.json
+source/CMakeLists.txt
