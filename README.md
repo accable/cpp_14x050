@@ -1,6 +1,6 @@
 ## Description
 
-This is a **non-official** C++ port of University of Geneva's Deep Learning Course (14x050), which is originally written in Python and Pytorch. The course can be accessed here: https://fleuret.org/dlc/
+This is a **non-official** C++ port of University of Geneva's Deep Learning Course (14x050), which was originally written in Python and Pytorch. The course can be accessed here: https://fleuret.org/dlc/
 
 This repository was made as a self-exercise for C++ and practicing the use of high-performance numerical libraries such as BLAS, LAPACK, and other hardware specific such as Apple Accelerate Framework, NVPL (Nvidia Performance Libraries), and Libtorch.
 
@@ -14,8 +14,8 @@ Due to the nature of C++, some of the assignments might be skipped or modified. 
 
 **Currently, this repository assumes that the user have:**
 
-1. A MacBook (required for Accelerate Framework) with at least 16GB of memory and clang++ and cmake.
-2. Nvidia Grace Superchip 240GB with ```nvhpc/24.7``` module (for ```nvc++``` compiler).
+1. A M-based (not tested on Intel) MacBook with at least 16GB of memory, clang++, and cmake compilers. Xcode is also necessary for Apple accelerate framework and clang)
+2. Nvidia Grace Superchip w/ 240GB memory alongside ```nvhpc/24.7``` module (for ```nvc++``` compiler).
 
 **Library dependencies:**
 
@@ -59,10 +59,5 @@ Due to the nature of C++, some of the assignments might be skipped or modified. 
 
 4.  Run the application:
     ```bash
-    ./exercise_1_1
-    ```
-    or
-    
-    ```bash
-    ./exercise_2
+    ./exercise_1_3
     ```
