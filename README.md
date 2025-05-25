@@ -14,15 +14,15 @@ Due to the nature of C++, some of the assignments might be skipped or modified. 
 
 **Currently, this repository assumes that the user have:**
 
-1. A MacBook (required for Accelerate Framework) with at least 16GB of memory with clang compiler (bundled with xcode) for Apple Accelerate Framework.
-2. Nvidia Grace Superchip 240GB
+1. A MacBook (required for Accelerate Framework) with at least 16GB of memory and clang++ and cmake.
+2. Nvidia Grace Superchip 240GB with ```nvhpc/24.7``` module (for ```nvc++``` compiler).
 
 **Library dependencies:**
 
-- Apple Accelerate
+- Apple Accelerate (only for ```exercise_1_3.cpp```)
 - OpenBLAS
 - LAPACK
-- NVPL
+- NVPL (Using ```nvhpc/24.7```)
 - Libtorch
 
 **How to use:**
@@ -40,23 +40,29 @@ Due to the nature of C++, some of the assignments might be skipped or modified. 
 
 3.  To compile the .cpp files with Apple Accelerate Framework:
     ```bash
-    clang++ -std=c++14 14x050_exercise_1_3.cpp -o 14x050_exercise_1_3 -framework Accelerate -DACCELERATE_NEW_LAPACK
+    clang++ -std=c++14 exercise_1_3.cpp -o exercise_1_3 -framework Accelerate -DACCELERATE_NEW_LAPACK
     ```
 
-3.  To compile the .cpp files with Libtorch support (requires CMake):
+    To compile with NVHPC:
+    ```bash
+    nvc++ exercise_1_3_nvpl.cpp -o exercise_1_3_nvpl -lblas
+    ```
+
+4.  To compile the .cpp files with Libtorch support (requires CMake):
     ```bash
     mkdir build
     cd build
     cmake -DCMAKE_PREFIX_PATH=/absolute/path/to/libtorch ..
-    cmake --build . --config Release -j 4  # Compiles with 4 cores
+    cmake --build . --config Release -j 4  # Compiling with 4 cores
     ```
     Make sure to update CMakeLists.txt before compiling!
 
 4.  Run the application:
     ```bash
-    ./14x050_exercise_1_1
+    ./exercise_1_1
     ```
     or
+    
     ```bash
     ./exercise_2
     ```
