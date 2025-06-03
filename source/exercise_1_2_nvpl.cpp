@@ -1,8 +1,8 @@
 #include <iostream>
 #include <random>
 #include <vector>
-#include "lapack.h"
-#include "cblas.h"
+#include "nvpl_lapack.h"
+#include "nvpl_blas_cblas.h"
 #include <complex>
 #include <algorithm>
 
